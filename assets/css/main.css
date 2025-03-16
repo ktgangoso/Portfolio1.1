@@ -272,7 +272,7 @@ h6 {
 .navmenu a,
 .navmenu a:focus {
   color: var(--nav-color);
-  padding: 15px 10px;
+  padding: 12px 10px;
   font-family: var(--nav-font);
   font-size: 16px;
   font-weight: 400;
