@@ -1,5 +1,3 @@
-<?php ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,8 +5,6 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Kevin</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
 
   <!-- Favicons -->
   <!-- <link href="assets/img/favicon.png" rel="icon"> -->
@@ -527,6 +523,50 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <script>
+    document.querySelector(".php-email-form").addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent default form submission
+
+      let form = this;
+      let formData = new FormData(form);
+      let successMessage = document.querySelector(".sent-message");
+      let errorMessage = document.querySelector(".error-message");
+      let loadingMessage = document.querySelector(".loading");
+
+      // Show loading
+      loadingMessage.style.display = "block";
+      successMessage.style.display = "none";
+      errorMessage.style.display = "none";
+
+      fetch("forms/contact.php", {
+          method: "POST",
+          body: formData,
+        })
+        .then(response => response.json()) // Convert response to JSON
+        .then(data => {
+          loadingMessage.style.display = "none"; // Hide loading
+
+          if (data.status === "success") {
+            successMessage.style.display = "block";
+            successMessage.innerHTML = data.message;
+            errorMessage.style.display = "none";
+            form.reset();
+          } else {
+            errorMessage.style.display = "block";
+            errorMessage.innerHTML = data.message;
+            successMessage.style.display = "none";
+          }
+        })
+        .catch(error => {
+          loadingMessage.style.display = "none";
+          errorMessage.style.display = "block";
+          errorMessage.innerHTML = "An unexpected error occurred. Please try again.";
+          successMessage.style.display = "none";
+        });
+    });
+  </script>
+
 
 </body>
 

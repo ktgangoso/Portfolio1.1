@@ -1,36 +1,40 @@
 <?php
-  $receiving_email_address = 'kevin.gangoso@gmail.com';
 
-  if( file_exists($php_email_form = '../assets/vendor/php-email-form/php-email-form.php' )) {
-    include( $php_email_form );
-  } else {
-    die( 'Unable to load the "PHP Email Form" Library!');
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require "../vendor/autoload.php";
+
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
+  $name = $_POST['name'];
+  $email = $_POST['email'];
+  $subject = $_POST['subject'];
+  $message = $_POST['message'];
+
+  $mail = new PHPMailer(true);
+  try {
+    $mail->isSMTP();
+    $mail->Host = "smtp.gmail.com";
+    $mail->SMTPAuth = true;
+    $mail->Username = "kevin.gangoso@gmail.com";
+    $mail->Password = "lxkh thkk rbjy zuky";
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->Port = 587;
+
+    $mail->setFrom("portfolio@gmail.com", "Portfolio");
+    $mail->addAddress("kevin.gangoso@gmail.com", "Kevin");
+
+    $mail->Subject = "New Contact form submition";
+    $mail->Body = "Name: $name\n " .
+                  "Email: $email\n" .
+                  "Subject: $subject\n" .
+                  "Message: $message\n";
+    if ($mail->send()) {
+      echo "Message sent Successfully";
+    } else {
+      echo "Message Could not be sent, : " . $mail->ErrorInfo;
+    }
+  } catch (Exception $e) {
+    echo "Message Could not be sent, : " . $mail->ErrorInfo;
   }
-
-  $contact = new PHP_Email_Form;
-  $contact->ajax = true;
-  
-  $contact->to = $receiving_email_address;
-  $contact->from_name = $_POST['name'];
-  $contact->from_email = $_POST['email'];
-  $contact->subject = $_POST['subject'];
-
-  
-  $contact->smtp = array(
-    'host' => 'example.com',
-    'username' => 'example',
-    'password' => 'pass',
-    'port' => '587'
-  );
-  
-
-  $contact->add_message( $_POST['name'], 'From');
-  $contact->add_message( $_POST['email'], 'Email');
-  $contact->add_message( $_POST['message'], 'Message', 10);
-
-  echo $contact->send();
-?>
-
-
-<!-- step 2 password -->
-<!-- lxkh thkk rbjy zuky -->
+}
