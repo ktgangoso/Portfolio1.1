@@ -894,7 +894,7 @@ section,
 }
 
 .portfolio .portfolio-content .portfolio-info .details-link {
-  text-align: center;
+  left: 50%;
   font-size: 24px;
   line-height: 0;
 }

@@ -1,3 +1,5 @@
+<?php ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -286,30 +288,30 @@
             <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
 
               <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-website">
-                <div class="portfolio-content h-100">
-                  <img src="assets/img/portfolio/GrocerEaseStore.png" class="img-fluid" alt="">
-                  <div class="portfolio-info">
-                    <h4>Web</h4>
-                    <p>Grocer East Store</p>
-                    <a href="grocereasestore.html" title="More Details" class="details-link">
-                      View
-                    </a>
+                <a href="grocereasestore.php" title="More Details" class="details-link">
+                  <div class="portfolio-content h-100">
+                    <img src="assets/img/portfolio/GrocerEaseStore.png" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                      <h4>Web</h4>
+                      <p>Grocer East Store</p>
+                    </div>
                   </div>
-                </div>
-              </div><!-- End Portfolio Item -->
+                </a>
+              </div>
+              <!-- End Portfolio Item -->
 
               <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-Workout">
-                <div class="portfolio-content h-100">
-                  <img src="assets/img/portfolio/web2/Home.png" class="img-fluid" alt="">
-                  <div class="portfolio-info">
-                    <h4>My Project</h4>
-                    <p>Vinn</p>
-                    <a href="myproject1.html" title="More Details" class="details-link">
-                      View
-                    </a>
+                <a href="myproject1.php" title="More Details" class="details-link">
+                  <div class="portfolio-content h-100">
+                    <img src="assets/img/portfolio/web2/Home.png" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                      <h4>My Project</h4>
+                      <p>Vinn</p>
+                    </div>
                   </div>
-                </div>
+                </a>
               </div>
+
               <!-- End Portfolio Item -->
 
               <!-- <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
@@ -329,17 +331,17 @@
               <!-- End Portfolio Item -->
 
               <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-Dashbaord">
-                <div class="portfolio-content h-100">
-                  <img src="assets/img/portfolio/GrocerEaseStoreAdmin.png" class="img-fluid" alt="">
-                  <div class="portfolio-info">
-                    <h4>Dashboard</h4>
-                    <p>Grocer East Store Dashbaord</p>
-                    <a href="grocerdashboard.html" title="More Details" class="details-link">
-                      View
-                    </a>
+                <a href="grocerdashboard.php" title="More Details" class="details-link">
+                  <div class="portfolio-content h-100">
+                    <img src="assets/img/portfolio/GrocerEaseStoreAdmin.png" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                      <h4>Dashboard</h4>
+                      <p>Grocer East Store Dashbaord</p>
+                    </div>
                   </div>
-                </div>
-              </div><!-- End Portfolio Item -->
+                </a>
+              </div>
+              <!-- End Portfolio Item -->
 
               <!-- <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-Workout">
                 <div class="portfolio-content h-100">
