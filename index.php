@@ -79,7 +79,7 @@
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <h2>Kevin Gangoso</h2>
-        <p><span class="typed" data-typed-items="Web Developer, Gamer, Fitness Coach">Web Developer</span><span
+        <p><span class="typed" data-typed-items="Web Developer, Front End Developer">Web Developer</span><span
             class="typed-cursor typed-cursor--blink" aria-hidden="true"></span><span
             class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
       </div>
